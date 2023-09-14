@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>enter your task</label>
+    <input id="inp" type="text"><br><br>
+    <button id="button">create</button><br><br>
+    <script>
+        const button = document.querySelector('#button');
+        button.addEventListener('click', () => {
+            const input = document.querySelector('#inp');
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            const br = document.createElement('br');
+            checkbox.setAttribute('type', 'checkbox');
+            label.innerHTML = input.value;
+            if (input.value != "") {
+                document.body.appendChild(label);
+                document.body.appendChild(checkbox);
+                document.body.appendChild(br);
+            }
+            input.value = "";
+        });
+    </script>
+</body>
+</html>
